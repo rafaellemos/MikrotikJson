@@ -2,3 +2,38 @@
 #   list station list in format json
 
 foreach i in=[ interface wireless registration-table find] do={ put ("{\n\r\"MAC\":\"".[interface wireless registration-table get value-name=mac-address  $i ]."\",\n\r\"Nome\":\"". [interface  wireless registration-table get value-name=radio-name  $i ]."\",\n\r\"TXMbps\":\"". [interface  wireless registration-table get value-name=tx-rate  $i ]."\",\n\r\"RXMbps\":\"". [interface  wireless registration-table get value-name=rx-rate  $i ]."\",\n\r\"TXRXBytes\":\"". [interface  wireless registration-table get value-name=bytes  $i ]."\",\n\r\"Sinal\":\"". [interface  wireless registration-table get value-name=signal-strength  $i ]."\",\n\r\"Qualidade\":\"". [interface  wireless registration-table get value-name=tx-ccq  $i ]."\",\n\r\"TempoLigado\":\"". [interface  wireless registration-table get value-name=uptime  $i ]."\"\n\r},")}
+
+saída/output:
+
+[
+{
+"MAC":"AA:BB:CC:DD:EE:FF",
+"Nome":"Fulano",
+"TXMbps":"90Mbps-40MHz/1S/SGI",
+"RXMbps":"6.5Mbps-20MHz/1S",
+"TXRXBytes":"165117024,14500058",
+"Sinal":"-77dBm@HT20-0",
+"Qualidade":"62",
+"TempoLigado":"02:15:33"
+},
+{
+"MAC":"BB:AA:CC:DD:EE:FF",
+"Nome":"Ciclano",
+"TXMbps":"300Mbps-40MHz/2S/SGI",
+"RXMbps":"108Mbps-40MHz/1S",
+"TXRXBytes":"9089865,2949572",
+"Sinal":"-50dBm@HT40-5",
+"Qualidade":"88",
+"TempoLigado":"00:32:51"
+},
+{
+"MAC":"CC:AA:BB:DD:EE:FF",
+"Nome":"Beltrano",
+"TXMbps":"300Mbps-40MHz/2S/SGI",
+"RXMbps":"108Mbps-40MHz/1S",
+"TXRXBytes":"9089865,2949572",
+"Sinal":"-50dBm@HT40-5",
+"Qualidade":"88",
+"TempoLigado":"00:32:51"
+}
+]
